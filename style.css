@@ -9,10 +9,10 @@ rem = roote element dividir os pixels do figma por 16)
   padding: 0;
   box-sizing: border-box;
 }
-
 /* Site Layout */
-.root {
+:root {
   --hue: 159;
+
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl (var(--hue) 57% 53%);
@@ -21,32 +21,43 @@ rem = roote element dividir os pixels do figma por 16)
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
 }
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
   background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
 }
-
+nav {
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font: 700 1rem 'Poppins', sans-serif;
+  color: var(--title-color);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--base-color);
+}
 h1 {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
+  -webkit-font-smotthing: auto;
 }
-
-#header {
-  height: 4.5rem;
+.button {
+  color: var(--base-color);
 }
-
 .container {
   width: 100%;
   margin: 0 1.5rem; /* 0 = top & bottom - 1.5rem = lateral */
 }
-
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
 img {
   width: 100%;
   height: auto;
+}
+#home .container {
+  margin: 0;
 }
