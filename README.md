@@ -1,3 +1,3 @@
 # djinx-nlw
 
-Project Origin Six  - Rocket Seat
+Simple corporate website
