@@ -3,7 +3,7 @@ root font padrão = 16px
 rem = roote element dividir os pixels do figma por 16)
 */
 
-/* RESET */
+/* reset */
 * {
   margin: 0;
   padding: 0;
@@ -16,12 +16,15 @@ img {
   width: 100%;
   height: auto;
 }
+ul {
+  list-style: none;
+}
 
-/* Variables */
+/* variables */
 :root {
   --header-height: 4.5rem;
 
-  /* Colors */
+  /* colors */
   --hue: 250;
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
@@ -32,14 +35,14 @@ img {
   --body-color: hsl(0 0% 98%);
 }
 
-/* Base */
+/* base */
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smotthing: auto;
@@ -68,7 +71,7 @@ h1 {
   );
 }
 
-/* Layout */
+/* layout */
 .container {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -87,18 +90,18 @@ h1 {
   display: flex;
 
   position: fixed;
+
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
 }
-nav {
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+
+main {
+  margin-top: calc (var(--header-height) + 2rem);
 }
+
+/* logo */
 .logo {
   font: 700 1rem 'Poppins', sans-serif;
   color: var(--title-color);
@@ -106,15 +109,77 @@ nav {
 .logo span {
   color: var(--base-color);
 }
-main {
-  margin-top: var(--header-height);
+
+/* menu */
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+nav ul li {
+  text-align: center;
+}
+nav ul.grid {
+  gap: 4rem;
+}
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+}
+nav ul li a:hover {
+  color: var(--base-color);
+}
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
 }
 
-/* Home  */
+nav ul li a:hover::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: var(--base-color);
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+
+  transition: width 0.2s;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+/* open menu */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center;
+}
+
+/* home  */
 #home {
   overflow: hidden;
 }
-#home .container {
+#home.container {
   margin: 0;
 }
 #home .image {
