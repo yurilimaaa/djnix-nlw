@@ -66,8 +66,17 @@ body {
   margin: 2rem 0;
   background: linear-gradient(
     270deg,
-    hsla(var(--hue), 36%, 57%, 1) 0%,
-    hsla(var(--hue), 65%, 88%, 0.34) 100%
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+.divider-2 {
+  height: 1px;
+  margin: 2rem 0;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 1),
+    hsla(var(--hue), 36%, 57%, 0.34)
   );
 }
 
@@ -82,6 +91,9 @@ body {
 }
 .section {
   padding: 5rem, 0;
+}
+.section .title{
+  margin-bottom: 1rem;
 }
 #header {
   background-color: var(--body-color);
@@ -199,12 +211,12 @@ nav.show .icon-close{
 #home {
   overflow: hidden;
 }
-#home.container {
+#home .container {
   margin: 0;
 }
 #home .image {
   position: relative;
-  margin-top: 2.3rem;
+  margin-top: 7rem;
 }
 #home .image::before {
   content: '';
@@ -233,5 +245,46 @@ nav.show .icon-close{
   margin-bottom: 1rem;
 }
 #home .text p {
+  margin-bottom: 2rem;
+}
+
+/* about */
+#about {
+  background-color: white;
+}
+#about .container {
+  margin: 0;
+}
+#about .image {
+  position: relative;
+  margin-top: 2.3rem;
+}
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%;
+  left: 33%;
+  z-index: 0;
+}
+#about .image img {
+  position: relative;
+  right: 2.9rem;
+}
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+#about .text h1 {
+  margin-bottom: 1rem;
+}
+#about .text p {
   margin-bottom: 2rem;
 }
