@@ -124,6 +124,10 @@ body {
   z-index: 100;
 }
 
+header.scroll{
+  box-shadow: 0 2px 4px 0px var(--text-color);
+}
+
 main {
   margin-top: calc (var(--header-height) + 2rem);
 }
@@ -144,6 +148,12 @@ nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+nav .menu{
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
 }
 nav ul li {
   text-align: center;
@@ -214,7 +224,6 @@ nav .icon-close {
 
   position: absolute;
   right: 1.5rem;
-  /*transition: ;*/
 }
 
 nav.show .icon-close{
